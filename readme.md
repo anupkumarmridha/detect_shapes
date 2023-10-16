@@ -73,7 +73,7 @@ docker build -t detect_shapes .
 #### Run the Docker container:
 
 ```bash
-docker run -d --name detect-shape-api -p 5000:5000 detect-shape
+docker run -d --name detect-shape-api -p 5000:5000 detect-shapes
 ```
 
 The app will be accessible at http://localhost:5000.
