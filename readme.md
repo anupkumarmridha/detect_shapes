@@ -81,7 +81,7 @@ The app will be accessible at http://localhost:5000.
 ### 6. Test the App
 Use the provided API endpoints to test the Flask app.
 
-**Sample Request**
+**Sample Request 1**
 - For example, you can use tools like curl or Postman to send JSON data to the http://localhost:4000/detect_shapes endpoint.
 
 
@@ -96,7 +96,7 @@ Use the provided API endpoints to test the Flask app.
 }
 ```
 
-**Sample Response**
+**Sample Response 1**
 The Flask app will respond with detected shapes:
 
 ```json
@@ -124,6 +124,97 @@ The Flask app will respond with detected shapes:
       "right"
     ],
     "shape": "vertical rectangle"
+  }
+}
+```
+
+**Sample Request 2**
+
+```json
+{
+    "matrix": [
+        ["G", "G", "M", "M"],
+        ["G", "G", "M", "M"],
+        ["B", "B", "N", "N"],
+        ["B", "B", "N", "N"]
+    ]
+}
+```
+
+**Sample Response 2**
+The Flask app will respond with detected shapes:
+
+```json
+{
+  "B": {
+    "location": [
+      "bottom left"
+    ],
+    "shape": "square"
+  },
+  "G": {
+    "location": [
+      "top left"
+    ],
+    "shape": "square"
+  },
+  "M": {
+    "location": [
+      "top right"
+    ],
+    "shape": "square"
+  },
+  "N": {
+    "location": [
+      "bottom right"
+    ],
+    "shape": "square"
+  }
+}
+```
+
+**Sample Request 3**
+
+```json
+{
+    "matrix": [
+        ["G", "G", "G", "M", "M", "M", "M"],
+        ["G", "B", "G", "M", "N", "N", "M"],
+        ["G", "G", "G", "M", "N", "N", "M"],
+        ["B", "B", "B", "B", "B", "N", "N"]
+    ]
+}
+
+```
+
+**Sample Response 2**
+The Flask app will respond with detected shapes:
+
+```json
+{
+  "B": {
+    "location": [
+      "bottom left"
+    ],
+    "shape": "horizontal rectangle"
+  },
+  "G": {
+    "location": [
+      "top left"
+    ],
+    "shape": "polygon"
+  },
+  "M": {
+    "location": [
+      "top right"
+    ],
+    "shape": "polygon"
+  },
+  "N": {
+    "location": [
+      "middle right"
+    ],
+    "shape": "polygon"
   }
 }
 ```
